@@ -3,6 +3,35 @@ import mediaData from "../data/mg_cities.json";
 import legendItems from "../entities/LegendeItems";
 
 class LoadCitiesTasks {
+  citiesSiglas = [
+    [11, "RO"],
+    [12, "AC"],
+    [13, "AM"],
+    [14, "RR"],
+    [15, "PA"],
+    [16, "AP"],
+    [17, "TO"],
+    [21, "MA"],
+    [22, "PI"],
+    [23, "CE"],
+    [24, "RN"],
+    [25, "PB"],
+    [26, "PE"],
+    [27, "AL"],
+    [28, "SE"],
+    [29, "BA"],
+    [31, "MG"],
+    [32, "ES"],
+    [33, "RJ"],
+    [35, "SP"],
+    [41, "PR"],
+    [42, "SC"],
+    [43, "RS"],
+    [50, "MS"],
+    [51, "MT"],
+    [52, "GO"],
+    [53, "DF"],
+  ];
   cfDataUrl =
     "https://raw.githubusercontent.com/asyncFrank/cfBrasil2022/main/list-test-lst.csv";
 
@@ -28,7 +57,7 @@ class LoadCitiesTasks {
   #processCfData = (dataCities) => {
     // console.log("tamanho de quem", cfCities.length);
     const { features } = mediaData;
-    
+
     for (let i = 0; i < features.length; i++) {
       const city = features[i];
 
@@ -39,16 +68,23 @@ class LoadCitiesTasks {
 
       //default values
       city.properties.confirmed = 0;
-      city.properties.confirmedText = "";
-        
-      if (matchCity != null) {
+      const matchSigla = this.citiesSiglas.find(
+        (item) => item[0] === Number(city.properties.id.substr(0, 2))
+      );
 
+      if (matchSigla != null) city.properties.confirmedText = matchSigla[1];
+
+      if (matchCity != null) {
         let confirmed = Number(matchCity.cat);
         let mine = matchCity.nome;
         let state = matchCity.uf;
         // console.log(mine);
         city.properties.confirmed = confirmed;
-        city.properties.confirmedText = ` - ${state} (${mine})`;
+        if (mine !== "") {
+          city.properties.confirmedText = ` - ${state} (${mine})`;
+        } else {
+          city.properties.confirmedText = ` - ${state}`;
+        }
       }
 
       this.#setCityColor(city);
