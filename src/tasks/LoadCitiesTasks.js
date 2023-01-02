@@ -64,9 +64,7 @@ class LoadCitiesTasks {
       const matchCity = dataCities.find(
         (dataCityItem) => city.properties.id === dataCityItem.id
       );
-      // console.log(matchCity);
-
-      //default values
+      
       city.properties.confirmed = 0;
       const matchSigla = this.citiesSiglas.find(
         (item) => item[0] === Number(city.properties.id.substr(0, 2))
@@ -80,11 +78,11 @@ class LoadCitiesTasks {
         let state = matchCity.uf;
         // console.log(mine);
         city.properties.confirmed = confirmed;
-        if (mine !== "") {
-          city.properties.confirmedText = ` - ${state} (${mine})`;
-        } else {
+        // if (mine !== "") {
+        //   city.properties.confirmedText = ` - ${state}`;
+        // } else {
           city.properties.confirmedText = ` - ${state}`;
-        }
+        // }
       }
 
       this.#setCityColor(city);
@@ -102,11 +100,5 @@ class LoadCitiesTasks {
       city.properties.color = legendItem.color;
     }
   };
-  // #setCountCitiesCategory = (citiesCategory) => {
-  //   var totalCamaFrango = citiesCategory.filter(
-  //     (item) => item.cat === 1
-  //   ).length;
-  //   // console.log(totalCamaFrango);
-  // };
 }
 export default LoadCitiesTasks;
