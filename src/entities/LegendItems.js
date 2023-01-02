@@ -3,29 +3,27 @@
 import LegendItem from "./LegendItem";
 
 const legendItems = [
-  new LegendItem(
-    "Neutras",
-    "#fff",
-    (cases) => (cases === 0) ,
-    
-  ),
+  new LegendItem("Neutras", "#fff", (cases) => cases === 0),
   new LegendItem(
     "Fontes de Fósforo",
     "#E52E2E",
-    (cases) => (cases ===2),
-    "white"
+    (cases) => cases === 2,
+    "white",
+    (cases) => cases === 2
   ),
   new LegendItem(
     "Cama de Frango",
     "#E49F17",
-    (cases) => (cases ===1),
-    "white"
+    (cases) => cases === 1,
+    "white",
+    (cases) => cases === 1
   ),
   new LegendItem(
     "Misturadores",
     "#005aff",
-    (cases) => (cases ===3),
-    "white"
+    (cases) => cases === 3,
+    "white",
+    (cases) => cases === 3
   ),
   // new LegendItem("Não presentes", "#ffffff", (cases) => true),
   // new LegendItem(
@@ -36,8 +34,8 @@ const legendItems = [
   // )
 
   /**
-   * 
-   * 
+   *
+   *
    */
 ];
 

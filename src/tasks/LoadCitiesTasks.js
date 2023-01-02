@@ -1,6 +1,6 @@
 import papa from "papaparse";
 import mediaData from "../data/mg_cities.json";
-import legendItems from "../entities/LegendeItems";
+import legendItems from "../entities/LegendItems";
 
 class LoadCitiesTasks {
   citiesSiglas = [
@@ -90,6 +90,7 @@ class LoadCitiesTasks {
       this.#setCityColor(city);
     }
     this.setState(features);
+    // this.#setCountCitiesCategory(dataCities);
   };
 
   #setCityColor = (city) => {
@@ -101,5 +102,11 @@ class LoadCitiesTasks {
       city.properties.color = legendItem.color;
     }
   };
+  // #setCountCitiesCategory = (citiesCategory) => {
+  //   var totalCamaFrango = citiesCategory.filter(
+  //     (item) => item.cat === 1
+  //   ).length;
+  //   // console.log(totalCamaFrango);
+  // };
 }
 export default LoadCitiesTasks;

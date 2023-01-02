@@ -3,7 +3,7 @@ import CamaFrangoMap from "./CamaFrangoMap";
 import Loading from "./Loading";
 import Legend from "./Legend";
 import LoadCitiesTasks from "../tasks/LoadCitiesTasks";
-import legendItems from "../entities/LegendeItems";
+import legendItems from "../entities/LegendItems";
 
 const CamaFrango = () => {
   const [cities, setCities] = useState([]);

@@ -21,7 +21,7 @@ export default function Legend({ legendItems }) {
             // marginTop:'0.5em'
           }}
         >
-          <span>{item.title}</span>
+          <span>{item.title} </span>
         </div>
       ))}
     </div>
