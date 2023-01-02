@@ -45,7 +45,7 @@ const CamaFrangoMap = ({ cities }) => {
       {locations.map((location) => (
         <Marker
          position={[location.position[0],location.position[1]]}
-          icon={getIcon(12,location.icon)}
+          icon={getIcon(14,location.icon)}
         >
           <Popup>
             {location.name} 
