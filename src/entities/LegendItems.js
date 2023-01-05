@@ -25,6 +25,20 @@ const legendItems = [
     "white",
     (cases) => cases === 3
   ),
+  new LegendItem(
+    "Misturadores + Fontes de Fósforo",
+    "#71CA00",
+    (cases) => cases ===4,
+    "white",
+    (cases) => cases === 4
+  ),
+  new LegendItem(
+    "Misturadores + Cama de Frango",
+    "#6428B2",
+    (cases) => cases ===5,
+    "white",
+    (cases) => cases === 5
+  ),
   // new LegendItem("Não presentes", "#ffffff", (cases) => true),
   // new LegendItem(
   //   "Cidades onde encontra-se presente Cama de Frango",

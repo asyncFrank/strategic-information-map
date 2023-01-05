@@ -33,7 +33,7 @@ class LoadCitiesTasks {
     [53, "DF"],
   ];
   cfDataUrl =
-    "https://raw.githubusercontent.com/asyncFrank/cfBrasil2022/main/list-test-lst.csv";
+    "https://raw.githubusercontent.com/asyncFrank/cfBrasil2022/main/lst-lst-lst.csv";
 
   setState = null;
   //aqui em baixo vira todos os paieses ou cidades que foram desenhados no mapa (nosso caso, cidades)
@@ -68,13 +68,14 @@ class LoadCitiesTasks {
       city.properties.confirmed = 0;
       const matchSigla = this.citiesSiglas.find(
         (item) => item[0] === Number(city.properties.id.substr(0, 2))
+        
       );
-
+      
       if (matchSigla != null) city.properties.confirmedText = matchSigla[1];
 
       if (matchCity != null) {
         let confirmed = Number(matchCity.cat);
-        let mine = matchCity.nome;
+        // let mine = matchCity.nome;
         let state = matchCity.uf;
         // console.log(mine);
         city.properties.confirmed = confirmed;

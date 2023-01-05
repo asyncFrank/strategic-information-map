@@ -11,7 +11,8 @@ import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 import "./camafrangomap.css";
-import { locations } from "../data/fonts";
+import {locations} from "../data/locations";
+import LeafletRoutingMachine from "../LeafletRoutingMachine";
 
 function getIcon(_iconSize,_icon) {
   return L.icon({
@@ -42,17 +43,19 @@ const CamaFrangoMap = ({ cities }) => {
     <MapContainerLeaflet style={{ height: "90vh" }} zoom={4} center={position}>
       <GeoJSON style={mapStyle} data={cities} onEachFeature={OnEachCity} />
 
-      {locations.map((location) => (
-        <Marker
-         position={[location.position[0],location.position[1]]}
-          icon={getIcon(14,location.icon)}
+        {locations.map((location) => (
+        location.lat  !== null && location.lng !== null &&
+        <Marker key={location.id}
+         position={[location.lat, location.lng]}
+          icon={getIcon(14,location?.icon)}
         >
           <Popup>
-            {location.name} 
+            {location?.name} 
           </Popup>
         </Marker>
-      ))}
-     
+      ))} 
+      
+      {/* <LeafletRoutingMachine/> */}
     </MapContainerLeaflet>
   );
 };
