@@ -9,13 +9,7 @@ import L from "leaflet";
 const LeafletRoutingMachine = () => {
   const map = useMap();
 
-  let DefaultIcon = L.icon({
-    iconUrl: "http://cdn.leafletjs.com/leaflet-0.6.4/images/marker-icon.png",
-    iconSize: [14],
-    iconAnchor: [8, 8],
-    popupAnchor: [0, 0],
-  });
-  L.Marker.prototype.options.icon = DefaultIcon;
+    L.Marker.prototype.options.icon = DefaultIcon;
 
   useEffect(() => {
     // let marker1 = L.marker([-15.7801, -47.9292], { icon: DefaultIcon }).addTo(
