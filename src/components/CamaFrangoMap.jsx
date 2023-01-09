@@ -9,6 +9,10 @@ import {
 
 import L from "leaflet";
 
+import LeafletGeocoder from "../LeafletGeocoder";
+import "leaflet-control-geocoder/dist/Control.Geocoder.css";
+import "leaflet-control-geocoder/dist/Control.Geocoder.js";
+
 import "leaflet/dist/leaflet.css";
 import "./camafrangomap.css";
 import {locations} from "../data/locations";
@@ -40,7 +44,7 @@ const CamaFrangoMap = ({ cities }) => {
   };
 
   return (
-    <MapContainerLeaflet style={{ height: "90vh" }} zoom={4} center={position}>
+    <MapContainerLeaflet style={{ height: "90vh" }} zoom={5} center={position}>
       <GeoJSON style={mapStyle} data={cities} onEachFeature={OnEachCity} />
 
         {locations.map((location) => (
@@ -54,10 +58,11 @@ const CamaFrangoMap = ({ cities }) => {
           </Popup>
         </Marker>
       ))} 
-      
+      {/* <LeafletGeocoder/>       */}
       {/* <LeafletRoutingMachine/> */}
     </MapContainerLeaflet>
   );
 };
+
 
 export default CamaFrangoMap;
