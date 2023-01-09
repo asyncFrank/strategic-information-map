@@ -42,7 +42,7 @@ const LeafletRoutingMachine = () => {
 };
 
 let DefaultIcon = L.icon({
-  iconUrl: "http://cdn.leafletjs.com/leaflet-0.6.4/images/marker-icon.png",
+  iconUrl: "/marker-icon.png",
   iconSize: [14],
   iconAnchor: [8, 8],
   popupAnchor: [0, 0],
