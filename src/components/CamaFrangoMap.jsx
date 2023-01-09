@@ -59,7 +59,7 @@ const CamaFrangoMap = ({ cities }) => {
         </Marker>
       ))} 
       {/* <LeafletGeocoder/>       */}
-      {/* <LeafletRoutingMachine/> */}
+      <LeafletRoutingMachine/>
     </MapContainerLeaflet>
   );
 };
