@@ -44,7 +44,7 @@ const CamaFrangoMap = ({ cities }) => {
   };
 
   return (
-    <MapContainerLeaflet style={{ height: "90vh" }} zoom={5} center={position}>
+    <MapContainerLeaflet style={{ height: "90vh" }} zoom={4} center={position}>
       <GeoJSON style={mapStyle} data={cities} onEachFeature={OnEachCity} />
 
         {locations.map((location) => (
